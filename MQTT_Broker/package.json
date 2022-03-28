@@ -1,0 +1,41 @@
+{
+  "name": "mqtt_broker",
+  "version": "1.0.0",
+  "description": "A mqtt brocker",
+  "main": "broker.js",
+  "scripts": {
+    "start": "node ./src/broker",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rm -rf build && mkdir build",
+    "build-babel": "babel ./src -d ./build",
+    "build": "npm run clean && npm run build-babel",
+    "production": "npm run build && node ./build/broker.js",
+    "dev": "nodemon --exec ./node_modules/.bin/babel-node ./src/broker.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/bktoanpv1/PiServer.git"
+  },
+  "keywords": [
+    "PiServer"
+  ],
+  "author": "toanpv1",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bktoanpv1/PiServer/issues"
+  },
+  "homepage": "https://github.com/bktoanpv1/PiServer#readme",
+  "dependencies": {
+    "@babel/runtime": "^7.17.2",
+    "express": "^4.17.3",
+    "mqtt-connection": "^4.1.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.17.6",
+    "@babel/core": "^7.17.5",
+    "@babel/node": "^7.16.8",
+    "@babel/plugin-transform-runtime": "^7.17.0",
+    "@babel/preset-env": "^7.16.11",
+    "nodemon": "^2.0.15"
+  }
+}
